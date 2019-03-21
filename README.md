@@ -1,2 +1,2 @@
 # CaravanClients
-client database for caravan storage @ Tynaarlo
+client database for caravan storage @ Tynaarlooo
