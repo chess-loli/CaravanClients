@@ -58,12 +58,11 @@ class ClientsController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function show(Client $client)
+    public function show(Clients $client)
     {
-        Clients::all() ;
+        
 
-
-        return view('clients.client');
+        return view('clients.show', compact('client'));
     }
 
     /**
@@ -72,9 +71,10 @@ class ClientsController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function edit(Client $client)
+    public function edit(Clients $client)
     {
-        //
+        
+        return view('clients.edit', compact('client'));
     }
 
     /**
@@ -84,9 +84,19 @@ class ClientsController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Client $client)
+    public function update(Request $request, Clients $client)
     {
-        //
+        $client->first_name = request('first_name');
+        $client->last_name = request('last_name');
+        $client->adress_street = request('adress_street');
+        $client->adress_zip = request('adress_zip');
+        $client->adress_city = request('adress_city');
+        $client->email = request('email');
+        $client->phone = request('phone');
+
+        $client->save();
+
+        return redirect('/clients');
     }
 
     /**
@@ -95,8 +105,10 @@ class ClientsController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Client $client)
+    public function destroy(Clients $client)
     {
-        //
+        $client->delete();
+
+        return redirect('/clients');
     }
 }

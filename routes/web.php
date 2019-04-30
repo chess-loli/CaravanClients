@@ -12,3 +12,5 @@
 */
 
 Route::resource('clients', 'ClientsController');
+
+Route::resource('reservations', 'ReservationsController');

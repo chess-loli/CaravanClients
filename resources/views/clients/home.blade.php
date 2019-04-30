@@ -4,7 +4,16 @@
 
 
 @section('content')
-    @foreach ($clients as $client)
-    <li>{{$client->first_name}} {{$client->last_name}}</li>
-    @endforeach
+    <h1>
+        Klanten
+    </h1>
+    <ul>
+        @foreach ($clients as $client)
+            <li style="margin-bottom: 1em">
+                <a href="/clients/{{ $client->id }}">
+                    {{$client->first_name}} {{$client->last_name}}
+                </a>
+            </li>
+        @endforeach
+    </ul>
 @endsection

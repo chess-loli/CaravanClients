@@ -34,7 +34,7 @@
     </div>
 
     <div>
-        <button type="submit">Create Client</button>
+        <button type="submit">Klant aanmaken</button>
     </div>
     
 </form>

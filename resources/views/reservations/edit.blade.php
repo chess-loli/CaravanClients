@@ -1,7 +1,9 @@
 @extends('layout')
 
-@section('title', 'Klant')
+@section('title', 'Reservering Bewerken')
 
 @section('content')
+
+
 
 @endsection
