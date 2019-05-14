@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Reservations;
+use App\Reservation;
+use App\Client;
 use Illuminate\Http\Request;
 
-class ReservationController extends Controller
+class ReservationsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,10 @@ class ReservationController extends Controller
      */
     public function index()
     {
+        $reservations = Reservation::all();
+        $clients = Client::all();
 
-
-        return view('reservations.home', compact('reservations'));
+        return view('reservations.home', compact('reservations', 'clients'));
     }
 
     /**
@@ -27,8 +29,9 @@ class ReservationController extends Controller
     public function create()
     {
         
+        $clients = Client::all();
 
-        return view('reservations.create');
+        return view('reservations.create', compact('clients'));
     }
 
     /**
@@ -39,9 +42,15 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        $reservation = new Reservations();
-
-        
+        $reservation = new Reservation();
+        $reservation->type_vehicle = request('type_vehicle');
+        $reservation->agenda_from = request('agenda_from');
+        $reservation->agenda_until = request('agenda_until');
+        $reservation->from_when = request('from_when');
+        $reservation->until_when = request('until_when');
+        $reservation->client_id = request('client_id');
+        // $reservation->storage_spot_id = request('storage_spot_id');
+        $reservation->storage_spot_id = 1;
 
         $reservation->save();
 
@@ -54,11 +63,11 @@ class ReservationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(reservation $reservation)
     {
-        $id = $id;
+    
 
-        return view('reservations.show');
+        return view('reservations.show', compact('reservation'));
     }
 
     /**
@@ -67,11 +76,12 @@ class ReservationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(reservation $reservation)
     {
         
+        $clients = Client::all();
 
-        return view('reservations.edit', compact('id'));
+        return view('reservations.edit', compact('reservation', 'clients'));
     }
 
     /**
@@ -100,6 +110,6 @@ class ReservationController extends Controller
     {
         $id->delete();
         
-        return redirect('/reservations');
+        return redirect('/reservations', compact('id'));
     }
 }

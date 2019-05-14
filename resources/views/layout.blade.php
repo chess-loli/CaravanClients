@@ -9,4 +9,13 @@
 <body>
     @yield('content')
 </body>
+
+<div style="margin-bottom: 1em">
+    <a href="/clients">Klanten</a>
+</div>
+
+<div style="margin-bottom: 1em">
+    <a href="/reservations">Reserveringen</a>
+</div>
+
 </html>

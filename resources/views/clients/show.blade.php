@@ -26,16 +26,9 @@
     Telefoon: {{ $client->phone }}
 </div>
 
-<div style="margin-bottom: 1em">
-    Type Voertuig: 
-    
-</div>
 
-<div style="margin-bottom: 1em">
-    Parkeerplaats Plek nr:
-    
-</div>
-
-<button>Bewerken</button>
+<p>
+    <a href="/clients/{{ $client->id }}/edit">Bewerken</a>
+</p>
 
 @endsection

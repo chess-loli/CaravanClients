@@ -16,4 +16,8 @@
             </li>
         @endforeach
     </ul>
+
+    <p style="margin-bottom: 1em">
+        <a href="/clients/create">Nieuwe klant aanmaken</a>
+    </p>
 @endsection

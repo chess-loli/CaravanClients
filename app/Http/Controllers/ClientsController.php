@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Clients;
+use App\Client;
 use Illuminate\Http\Request;
 
 class ClientsController extends Controller
@@ -14,7 +14,7 @@ class ClientsController extends Controller
      */
     public function index()
     {
-        $clients = Clients::all();
+        $clients = Client::all();
 
         return view('clients.home', compact('clients'));
     }
@@ -37,7 +37,7 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
-        $client = new Clients();
+        $client = new Client();
     
         $client->first_name = request('first_name');
         $client->last_name = request('last_name');
@@ -58,7 +58,7 @@ class ClientsController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function show(Clients $client)
+    public function show(Client $client)
     {
         
 
@@ -71,7 +71,7 @@ class ClientsController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function edit(Clients $client)
+    public function edit(Client $client)
     {
         
         return view('clients.edit', compact('client'));
@@ -84,7 +84,7 @@ class ClientsController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Clients $client)
+    public function update(Request $request, Client $client)
     {
         $client->first_name = request('first_name');
         $client->last_name = request('last_name');
@@ -105,7 +105,7 @@ class ClientsController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Clients $client)
+    public function destroy(Client $client)
     {
         $client->delete();
 

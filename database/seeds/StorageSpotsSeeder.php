@@ -10,9 +10,12 @@ class StorageSpotsSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        DB::table('storage_spots')->insert([
-            'plan_nr' => 3
-        ]);
+    {   
+        
+        foreach (range(1, 40) as $id) {
+            DB::table('storage_spots')->insert([
+                'plan_nr' => $id
+            ]);
+        }
     }
 }

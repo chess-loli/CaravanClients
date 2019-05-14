@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ClientStorageSpotSeeder extends Seeder
+class ReservationsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class ClientStorageSpotSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('client_storage_spot')->insert([
+        DB::table('reservations')->insert([
             'client_id' => 1,
             'storage_spot_id' => 1,
             'type_vehicle' => 2,
