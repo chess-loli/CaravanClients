@@ -19,6 +19,7 @@ class CreateReservationsTable extends Migration
             $table->foreign('client_id')->references('id')->on('clients');
             $table->unsignedBigInteger('storage_spot_id');
             $table->foreign('storage_spot_id')->references('id')->on('storage_spots');
+            $table->string('plan_add')->nullable();
             $table->string('type_vehicle');
             $table->dateTime('from_when');
             $table->dateTime('until_when');

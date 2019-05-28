@@ -18,4 +18,5 @@ class StorageSpotsSeeder extends Seeder
             ]);
         }
     }
+
 }

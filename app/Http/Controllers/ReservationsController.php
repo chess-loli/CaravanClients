@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Reservation;
 use App\Client;
+use App\StorageSpot;
 use Illuminate\Http\Request;
 
 class ReservationsController extends Controller
@@ -30,8 +31,9 @@ class ReservationsController extends Controller
     {
         
         $clients = Client::all();
+        $storageSpots = StorageSpot::all();
 
-        return view('reservations.create', compact('clients'));
+        return view('reservations.create', compact('clients', 'storageSpots'));
     }
 
     /**
@@ -49,8 +51,10 @@ class ReservationsController extends Controller
         $reservation->from_when = request('from_when');
         $reservation->until_when = request('until_when');
         $reservation->client_id = request('client_id');
-        // $reservation->storage_spot_id = request('storage_spot_id');
-        $reservation->storage_spot_id = 1;
+        $reservation->storage_spot_id = request('storage_spot_id');
+        $reservation->plan_add = request('plan_add');
+        
+        // $reservation->storage_spot_id = 1;
 
         $reservation->save();
 
@@ -80,8 +84,9 @@ class ReservationsController extends Controller
     {
         
         $clients = Client::all();
+        $storageSpots = StorageSpot::all();
 
-        return view('reservations.edit', compact('reservation', 'clients'));
+        return view('reservations.edit', compact('reservation', 'clients', 'storageSpots'));
     }
 
     /**
@@ -91,13 +96,20 @@ class ReservationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, reservation $reservation)
     {
-        
+        $reservation->type_vehicle = request('type_vehicle');
+        $reservation->agenda_from = request('agenda_from');
+        $reservation->agenda_until = request('agenda_until');
+        $reservation->from_when = request('from_when');
+        $reservation->until_when = request('until_when');
+        $reservation->client_id = request('client_id');
+        $reservation->storage_spot_id = request('storage_spot_id');
+        $reservation->plan_add = request('plan_add');
 
-        $id->save();
+        $reservation->save();
 
-        return redirect('/reservations', compact('id'));
+        return redirect('/reservations');
     }
 
     /**
@@ -106,10 +118,10 @@ class ReservationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Reservation $reservation)
     {
-        $id->delete();
+        $reservation->delete();
         
-        return redirect('/reservations', compact('id'));
+        return redirect('/reservations');
     }
 }

@@ -10,7 +10,7 @@
     @yield('content')
 </body>
 
-<div style="margin-bottom: 1em">
+<div style="margin-bottom: 3em, margin-top: 3em">
     <a href="/clients">Klanten</a>
 </div>
 

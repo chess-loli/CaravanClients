@@ -9,7 +9,7 @@
 <ul>
     @foreach ($reservations as $reservation)
     <li style="margin-bottom: 1em">
-       <a href="/reservations/{{ $reservation->id }}">{{ $reservation->client->first_name }}</a>
+       <a href="/reservations/{{ $reservation->id }}">{{ $reservation->client->first_name }} {{ $reservation->client->last_name }} {{ $reservation->from_when }} - {{ $reservation->until_when }}</a>
     </li>
     @endforeach
 </ul>

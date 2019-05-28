@@ -5,6 +5,10 @@
 @section('content')
 
 <div style="margin-bottom: 1em">
+    klant: <a href="/clients/{{ $reservation->client->id }}">{{ $reservation->client->first_name }} {{ $reservation->client->last_name }}<a>
+</div>
+
+<div style="margin-bottom: 1em">
     type voertuig: {{ $reservation->type_vehicle }}
 </div>
 
@@ -25,12 +29,13 @@
 </div>
 
 <div style="margin-bottom: 1em">
-    plek nr: {{ $reservation->storageSpot->plan_nr }}
+    plek nr: {{ $reservation->storageSpot->plan_nr }} 
 </div>
 
 <div style="margin-bottom: 1em">
-    klant: <a href="/clients/{{ $reservation->client->id }}">{{ $reservation->client->first_name }} {{ $reservation->client->last_name }}<a>
+    Toevoeging: {{ $reservation->plan_add }}
 </div>
+
 
 <p>
     <a href="/reservations/{{ $reservation->id }}/edit">Bewerken</a>
