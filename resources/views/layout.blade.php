@@ -5,17 +5,22 @@
     <title>
         @yield('title')
     </title>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+
 <body>
-    @yield('content')
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/clients">Klanten</a>
+            <a class="nav-item nav-link" href="/reservations">Reserveringen</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        @yield('content')
+    </div>
 </body>
 
-<div style="margin-bottom: 3em, margin-top: 3em">
-    <a href="/clients">Klanten</a>
-</div>
-
-<div style="margin-bottom: 1em">
-    <a href="/reservations">Reserveringen</a>
-</div>
+<script src="/js/app.js"></script>
 
 </html>

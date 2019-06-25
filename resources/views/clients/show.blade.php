@@ -6,29 +6,35 @@
 
 <h1 >{{$client->first_name}} {{$client->last_name}}</h1>
 
-<div style="margin-bottom: 1em">
-    Straat: {{ $client->adress_street }}
-</div>
+<table class='table borderless'>
+    <tbody>
+        <tr>
+            <th scope="row">Straat</th>
+            <td>{{ $client->adress_street }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Postcode</th>
+            <td>{{ $client->adress_zip }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Plaats</th>
+            <td>{{ $client->adress_city }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Email</th>
+            <td>{{ $client->email }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Telefoon</th>
+            <td>{{ $client->phone }}</td>
+        </tr>
+    </tbody>
+</table>
 
-<div style="margin-bottom: 1em">
-    Postcode: {{ $client->adress_zip }}
-</div>
-
-<div style="margin-bottom: 1em">
-    Plaats: {{ $client->adress_city }}
-</div>
-
-<div style="margin-bottom: 1em">
-    Email: {{ $client->email }}
-</div>
-
-<div style="margin-bottom: 1em">
-    Telefoon: {{ $client->phone }}
-</div>
 
 
 <p>
-    <a href="/clients/{{ $client->id }}/edit">Bewerken</a>
+    <a class="btn btn-primary" href="/clients/{{ $client->id }}/edit" role="button">Bewerken</a>
 </p>
 
 @endsection
