@@ -31,14 +31,14 @@
     <div class="form-group">
         <div>
             Gestald vanaf:
-            <input type="date" class="form-control" name="from_when" default="null">
+            <input type="date" class="form-control" name="from_when" default="datetime-local">
         </div>
     </div>
 
     <div class="form-group">
         <div>
             Gestald tot:
-            <input type="date" class="form-control" name="until_when" default="null">
+            <input type="date" class="form-control" name="until_when" default="datetime-local">
         </div>
     </div>
     
