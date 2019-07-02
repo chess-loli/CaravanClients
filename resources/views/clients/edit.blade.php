@@ -8,44 +8,44 @@
     {{ method_field('PATCH') }}
     {{ csrf_field() }}
 
-    <div style="margin-bottom: 1em">
+    <div class="form-group">
         Voornaam: 
-        <input type="text" name="first_name" placeholder="First Name" value="{{ $client->first_name }}">
+        <input type="text" name="first_name" class="form-control" value="{{ $client->first_name }}">
     </div>
 
-    <div style="margin-bottom: 1em">
+    <div class="form-group">
         Achternaam: 
-        <input type="text" name="last_name" placeholder="Last Name" value="{{ $client->last_name }}">
+        <input type="text" name="last_name" class="form-control" value="{{ $client->last_name }}">
     </div>
 
-    <div style="margin-bottom: 1em">
+    <div class="form-group">
         Straat:
-        <input type="text" name="adress_street" placeholder="street name and number" value="{{ $client->adress_street }}">
+        <input type="text" name="adress_street" class="form-control" value="{{ $client->adress_street }}">
     </div>
 
-    <div style="margin-bottom: 1em">
+    <div class="form-group">
         Postcode:
-        <input type="text" name="adress_zip" placeholder="postal code/zip" value="{{ $client->adress_zip }}">
+        <input type="text" name="adress_zip" class="form-control" value="{{ $client->adress_zip }}">
     </div>
 
-    <div style="margin-bottom: 1em">
+    <div class="form-group">
         Plaats:
-        <input type="text" name="adress_city" placeholder="city name" value="{{ $client->adress_city }}">
+        <input type="text" name="adress_city" class="form-control" value="{{ $client->adress_city }}">
     </div>
 
-    <div style="margin-bottom: 1em">
+    <div class="form-group">
         Email:
-        <input type="text" name="email" placeholder="email adress" value="{{ $client->email }}">
+        <input type="text" name="email" class="form-control" value="{{ $client->email }}">
     </div>
 
-    <div style="margin-bottom: 1em">
+    <div class="form-group">
         Telefoon nr:
-        <input type="text" name="phone" placeholder="phone number" value="{{ $client->phone }}">
+        <input type="text" name="phone" class="form-control" value="{{ $client->phone }}">
     </div>
 
-    <div style="margin-bottom: 1em">
-        <button type="submit">Bewerking opslaan</button>
-    </div> 
+
+    <button type="submit" class="btn btn-primary">Bewerking opslaan</button>
+    
 </form>
 
 <form method="POST" action="/clients/{{ $client->id }}">
@@ -53,7 +53,7 @@
 {{ csrf_field() }}
 
     <div>
-        <button type="submit">Klant verwijderen</button>
+        <button type="submit" class="btn btn-primary">Klant verwijderen</button>
     </div>
 </form>
 
