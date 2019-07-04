@@ -14,3 +14,7 @@
 Route::resource('clients', 'ClientsController');
 
 Route::resource('reservations', 'ReservationsController');
+
+Route::get('/', function () {
+    return view('welcome');
+});
