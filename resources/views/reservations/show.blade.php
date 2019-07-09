@@ -15,20 +15,20 @@
             <td>{{ $reservation->type_vehicle }}</td>
         </tr>
         <tr>
+            <th scope="row">Lengte</th>
+            <td>{{ $reservation->length_vehicle }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Kosten</th>
+            <td>{{ $reservation->costs_spot }}</td>
+        </tr>
+        <tr>
             <th scope="row">In de agenda vanaf</th>
             <td>{{ $reservation->agenda_from }}</td>
         </tr>
         <tr>
             <th scope="row">In de agenda tot</th>
             <td>{{ $reservation->agenda_until }}</td>
-        </tr>
-        <tr>
-            <th scope="row">Gestald vanaf</th>
-            <td>{{ $reservation->from_when }}</td>
-        </tr>
-        <tr>
-            <th scope="row">Gestald tot</th>
-            <td>{{ $reservation->until_when }}</td>
         </tr>
         <tr>
             <th scope="row">Plek nr</th>

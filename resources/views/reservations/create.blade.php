@@ -16,29 +16,29 @@
 
     <div class="form-group">
         <div>
-            In de agenda vanaf:
-            <input type="date" class="form-control" name="agenda_from" default="datetime-local">
+            Lengte:
+            <input type="text" class="form-control" name="length_vehicle" default="lengte">
         </div>
     </div>
 
    <div class="form-group">
         <div>
-            In de agenda tot:
-            <input type="date" class="form-control" name="agenda_until" default="datetime-local">
+            Kosten:
+            <input type="text" class="form-control" name="costs_spot" default="€100.-">
         </div>
     </div>
 
     <div class="form-group">
         <div>
             Gestald vanaf:
-            <input type="date" class="form-control" name="from_when" default="datetime-local">
+            <input type="date" class="form-control" name="agenda_from" default="datetime-local">
         </div>
     </div>
 
     <div class="form-group">
         <div>
             Gestald tot:
-            <input type="date" class="form-control" name="until_when" default="datetime-local">
+            <input type="date" class="form-control" name="agenda_until" default="datetime-local">
         </div>
     </div>
     

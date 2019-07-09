@@ -11,8 +11,10 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/home">home</a>
             <a class="nav-item nav-link" href="/clients">Klanten</a>
             <a class="nav-item nav-link" href="/reservations">Reserveringen</a>
+            <a class="nav-item nav-link" href="/login">inloggen</a>
         </div>
     </nav>
     

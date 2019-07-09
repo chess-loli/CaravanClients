@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         
         $this->call(StorageSpotsSeeder::class);
-        
+        $this->call(UsersSeeder::class);
     }
 }

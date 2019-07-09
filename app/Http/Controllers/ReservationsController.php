@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class ReservationsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -48,8 +52,8 @@ class ReservationsController extends Controller
         $reservation->type_vehicle = request('type_vehicle');
         $reservation->agenda_from = request('agenda_from');
         $reservation->agenda_until = request('agenda_until');
-        $reservation->from_when = request('from_when');
-        $reservation->until_when = request('until_when');
+        $reservation->costs_spot = request('costs_spot');
+        $reservation->length_vehicle = request('length_vehicle');
         $reservation->client_id = request('client_id');
         $reservation->storage_spot_id = request('storage_spot_id');
         $reservation->plan_add = request('plan_add');
@@ -101,8 +105,8 @@ class ReservationsController extends Controller
         $reservation->type_vehicle = request('type_vehicle');
         $reservation->agenda_from = request('agenda_from');
         $reservation->agenda_until = request('agenda_until');
-        $reservation->from_when = request('from_when');
-        $reservation->until_when = request('until_when');
+        $reservation->costs_spot = request('costs_spot');
+        $reservation->length_vehicle = request('length_vehicle');
         $reservation->client_id = request('client_id');
         $reservation->storage_spot_id = request('storage_spot_id');
         $reservation->plan_add = request('plan_add');

@@ -21,10 +21,10 @@ class CreateReservationsTable extends Migration
             $table->foreign('storage_spot_id')->references('id')->on('storage_spots');
             $table->string('plan_add')->nullable();
             $table->string('type_vehicle');
-            $table->dateTime('from_when');
-            $table->dateTime('until_when');
+            $table->text('length_vehicle');
+            $table->text('costs_spot');
             $table->dateTime('agenda_from');
-            $table->dateTime('agenda_until');
+            $table->dateTime('agenda_until')->nullable();
             $table->timestamps();
         });
     }

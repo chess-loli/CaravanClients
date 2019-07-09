@@ -14,30 +14,30 @@
     </div>
 
     <div class="form-group">
-        in de agenda vanaf:
-        <input type="date" class="form-control" name="agenda_from" value="{{ $reservation->agenda_from }}" default="{{ $reservation->agenda_from }}">
+       Lengte:
+            <input type="text" class="form-control" name="length_vehicle" value="{{ $reservation->length_vehicle }}" default="{{ $reservation->length_vehicle }}">
     </div>
 
     <div class="form-group">
-        in de agenda tot:
-        <input type="date" class="form-control" name="agenda_until" value="{{ $reservation->agenda_until }}" default="{{ $reservation->agenda_until }}">
+        Kosten:
+            <input type="text" class="form-control" name="costs_spot" value="{{ $reservation->costs_spot }}" default="{{ $reservation->costs_spot }}">
     </div>
 
     <div class="form-group">
         gestald vanaf:
-        <input type="date" class="form-control" name="from_when" value="{{ $reservation->from_when }}" default="{{ $reservation->from_when }}">
+        <input type="date" class="form-control" name="agenda_from" value="{{ $reservation->agenda_from }}" default="{{ $reservation->agenda_from }}">
     </div>
 
     <div class="form-group">
         gestald tot:
-        <input type="date" class="form-control" name="until_when" value="{{ $reservation->until_when }}" default="{{ $reservation->until_when }}">
+        <input type="date" class="form-control" name="agenda_until" value="{{ $reservation->agenda_until }}" default="{{ $reservation->agenda_until }}">
     </div>
     
     <div class="form-group">
         Klant: 
         <select name="client_id" class="form-control">
             @foreach ($clients as $client)
-            <option value="{{ $client->id }}">{{ $client->first_name }} {{ $client->last_name }}</option>
+            <option value="{{ $client->id }}" {{ ($client->id == $reservation->client_id) ? 'selected' : '' }}>{{ $client->first_name }} {{ $client->last_name }}</option>
             @endforeach
         </select>
     </div>
@@ -46,7 +46,7 @@
         Plek nr:
         <select name="storage_spot_id" class="form-control">
             @foreach ($storageSpots as $storageSpot)
-            <option value="{{ $storageSpot->id }}">{{ $storageSpot->plan_nr }}</option>
+            <option value="{{ $storageSpot->id }}"  {{ ($storageSpot->id == $reservation->storage_spot_id) ? 'selected' : '' }}>{{ $storageSpot->plan_nr }}</option>
             @endforeach
         </select>
     </div>
